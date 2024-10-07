@@ -19,7 +19,7 @@ interface Props {
   tags: readonly string[];
   link?: string;
   image?: string;
-  video?: string;
+  video?: string; // đéo dùng video nữa
   links?: readonly {
     icon: React.ReactNode;
     type: string;
@@ -51,12 +51,9 @@ export function ProjectCard({
         className={cn("block cursor-pointer", className)}
       >
         {video && (
-          <video
-            src={video}
-            autoPlay
-            loop
-            muted
-            playsInline
+          <img
+          src={video} // Sử dụng video làm nguồn cho GIF
+          alt={title} // Thêm mô tả cho hình ảnh
             className="pointer-events-none mx-auto h-40 w-full object-cover object-top" // needed because random black line at bottom of video
           />
         )}
